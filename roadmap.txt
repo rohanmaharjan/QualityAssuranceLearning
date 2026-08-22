@@ -1,13 +1,13 @@
-1. SOftware fundamentals
-2. Manual testing
-3. Test case Design
-4. Bug reporting and test management
-5. API testing
-6. SQL and Database Testing
-7. Git and CI/CD
-8. Automation Testing
-9. Web Automation Framework
-10. Performance Testing
-11. Security Testing Basics
-12. CI/CD + Docker
-13. Advanced QA / SDET
+Software fundamentals
+Manual testing
+Test case Design
+Bug reporting and test management
+API testing
+SQL and Database Testing
+Git and CI/CD
+Automation Testing
+Web Automation Framework
+Performance Testing
+Security Testing Basics
+CI/CD + Docker
+Advanced QA / SDET
