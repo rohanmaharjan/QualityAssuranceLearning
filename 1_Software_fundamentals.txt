@@ -200,3 +200,39 @@ Retesting: You test that eact bug again.
 
 Regression: You test other existing functionality to ensure the fix didn't break anything else.
     Purpose: Did the fix break something else?
+
+
+# Testing
+A) Unit Testing
+    Tsting the smallest individual component of the software in isolation.
+    Example: A backend has:
+      validate_email()
+      check_password()
+      authenticate_user()
+      create_session()
+    A developer might test:
+      validatee_email()
+      for this database, frontend, and other components arent necessarily involved.
+
+B) Integration Testing
+    Now we combine multiple components and check whether they work correctly together.
+    Example: For login
+    Frontend --> Login API --> Authentication service --> Database
+    even though each component work individually, they may not work together if they dont communicate correctly.
+
+    user enters username and password.
+    frontend sends the request --> API receives it --> API queries databse --> data base return user --> API responds --> frontend redirects
+
+C) System Testing
+    Now we test the complete integrated application as a whole.
+    Example: for an e-commerce website
+    login --> search --> product --> cart --> checkout --> payment --> order --> email confimation
+    we're testing the complete system against its requirements.
+
+D) Acceptance testing
+   Now we ask:
+        "Does this system satisfy the business/user requirements well enough to be accepted?"
+    This is often associated with UAT — User Acceptance Testing.
+    For example, an e-commerce client requested:
+    Users must be able to purchase products using credit cards.
+    The system may technically work, but the business/user needs to verify that it actually satisfies their requirements. 
