@@ -1,0 +1,202 @@
+What is software testing?
+Software testing is the process of evaluating software to find defects and verify that it behaves according to specified requirements.
+Testing = checking whether the software does what it is supposed to do, and discovering what it does wrong.
+
+Verification Vs Validation
+# Verification
+  "Are we building the product right?"
+  It checks whether the software is being developed according to specifications/designs/requirements.
+  Reviewing requirements, reviewing design documents, code reviews, documentation reviews
+
+# Validation
+  "Are we building the right product?"
+  It checks whether the actual software satisfies the user's needs and requirements.
+  Runnign login tests, testing checkout, testing registration, testing APIs
+
+QA vs Testing
+# QA (focuses on preventing problems)
+  It is process-oriented.
+  Its goal is to prevent defects and improve the software development process.
+  Defining testing processes, establishing coding/testing standards, process improvemnt, reviewing development practices
+
+# Testing (focuses on finding problems)
+  It is product-oriented.
+  Its goal is to find the defects in the actual software.
+
+
+Q1 > Imagine you are given this application:
+    A login page has:
+    • Email field
+    • Password field
+    • Login button 
+    • “Forgot Password’ link
+    A developer tells you:
+    "The login feature is finished. Please test it."
+    As a QA engineer, what would you test?
+
+Answer: There will always be positive scenario (things that should work) and negative scenario (things that should fail correctly).
+    # Positive scenario
+    • Vaid email + correct password
+    • Valid credential redirects to users dashboard
+    • Remember me works if available
+
+    # Negative scenario
+    • Invalid email format
+    • Unregistered email
+    • Correct email + wrong password
+    • Empty email or password or both feilds
+    • Extremely long email
+    • Password below minimum length or maxium length
+
+    # Security-relates scenario
+    • Can someone login without password?
+    • can the password be exposed?
+    • does it reveal if email exists?
+    • how many failed attempts can be made?
+    • can a user access to other user's account?
+
+    # UI/UX scenario
+    • login button visibility?
+    • are error messages understandable?
+    • does the page work on mobile?
+    • does pressing enter submit the form?
+    • does forgot password work?
+
+Important Note:
+    Don't think onl: "What should I test?"
+
+    Also think: "What can go wrong?"
+
+For exmaple:
+    password requirements = at least 8 characters
+
+    Don't just test: 8 characters --> works
+
+    Also test: spaces, special characters, unicode, SQL injection, XSS payload, copy/paste, leading/trailing spaces
+
+What is Defect/Bug?
+A defect is a problem in the software where the actual behavior differs from the expected behavior or requirement.
+
+Example:
+Password must contain at least 8 characters.
+You enter Password: abcd
+The application allows you to log in.
+
+Error vs Bug
+    Error: A mistake made by a person.
+        Develper writes > instead of >=
+    Defect/Bug: The mistake in the software.
+    Failure: the software actually behaves incorrectly when the defect is executed.
+
+Expected vs Actual Result
+    Requirement: Ater successful login, the user should be redirected to /dashboard.
+    Test: Enter valid credential and click login button.
+    Expected: User is redirected to the dashboard.
+    Actual: User remains on the login page.
+
+Test scenario (What to test?) vs Test case (How exactly we test?)
+    Test scenario: A high-level thing you want to test.
+    Example: Test login functionality.
+
+    Test case: A specific set of steps, inputs, and expected results used to verify something.
+    Example:
+    Verify login with valid credentials
+
+    Precondition:
+    User has a registered account.
+
+    Steps:
+    1. Open login page.
+    2. Enter registered email.
+    3. Enter correct password.
+    4. Click Login.
+
+    Expected:
+    User is redirected to dashboard.
+
+Test Scenario Example
+suppose we're testing an e-commerce website.
+A scenario might be:
+    Verify shopping cart functionality.
+From one scenario, we can create multiple test cases:
+    Add one product
+    Add multiple products
+    Remove product
+    Increase quantity
+    Decrease quantity
+    Add out-of-stock product
+    Cart persistence after refresh
+    Cart persistence after logout/login
+    Price calculation
+    Tax calculation
+    Discount calculation
+    Empty cart
+    Maximum quantity
+
+
+Functional (What it does?) vs Non-Functional (How well it does?) Testing
+Functional Testing: Tests what the system does.
+    Example: Does clicking Login authenticate the user?
+    Login, Registration, Search, Checkout, Payment, Password registered
+
+Non-Functional testing: Tests how well the system performs.
+    Example: Performance (Can 10000 users access aplication simultaneously?)
+             Security (Can an authorised user access anouther user's account?)
+             Usability (Can users easily understand the interfac?)
+             Compatibility (Does the application work on different browser and devices?)
+             Reliability (Does the system remain sable for long periods?)
+
+Black Box tesing vs White Box Testing
+Black Box testing: You test the software without knowing its internal code/implementation.
+    Example: Input --> Login application --> Output
+    you dont care if it is devloped using Py, JS, C++, and only care about behaviour of the system
+    Manual functional testing is often black-box testing.
+
+White Box testing: You have knowledge of the internal implementation/code.
+    Example: 
+    if password == stored_password:
+        login()
+    Developers commonly perform a lot of white-box testing through unit tests.
+
+Grey Box Testing: YOU hav paratial knowledge of the internal system (API architecture, Database structure, Authentication mechanism)
+
+Manual Testing vs Automation Testing
+Manual testing: A human performs the test
+    Open browser --> Enter email --> enter password --> click login --> check results
+
+Automation testing: A program performs the testing.
+    automation script --> open browser --> enter credentials --> click login --> verify dashboard
+
+Note: Automation is excellent for repetitive tasks, while it doesnt replace QA thinking.
+
+Smoke Testing
+Imagine developers deploy a new build.
+Before spending 5 hours testing every feature, QA first asks:
+"Is this build stable enough to test?"
+That's where Smoke Testing comes in.
+Example:
+    can application open? --> can user login? --> can user search? --> can product be added to the cart? --> can checkout open?
+
+    if the lofin itself is completely broken, there'value in spending hours testing advanced features.
+
+    Therefore, Smoke testing is a set of basic tests performed to verify that the major functionality of a build is working and that the build is stable enough for further testing. 
+
+Sanity Testing:
+Now imagine developers fix one specific bug:
+"Checkout discount calculation was incorrect."
+A new build is provided.
+You don't necessarily test the entire application from scratch.
+Does the Particular change/fix work correctly?
+
+
+Retesting vs Regression testing
+Suppose there's a bug:
+    Login fails with a valid password.
+Developer fixes it.
+
+Retesting: You test that eact bug again.
+    Previously failed test --> Developer fixed bug -- > Run same test again
+    Purpose: Verify that the specific defect has been fixed.
+
+Regression: You test other existing functionality to ensure the fix didn't break anything else.
+    Purpose: Did the fix break something else?
