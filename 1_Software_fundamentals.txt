@@ -236,3 +236,52 @@ D) Acceptance testing
     For example, an e-commerce client requested:
     Users must be able to purchase products using credit cards.
     The system may technically work, but the business/user needs to verify that it actually satisfies their requirements. 
+
+Static vs Dynamic Testing
+    Static Testing
+    Static testing means testing without executing the software.
+    It involves reviewing Requirements, design documents, test palns, soource code, and documentation
+    Example:
+    Suppose the requirement says:
+        "Password must contain at least 8 characters."
+    During a requirement review, you notice that another document says:
+        "Password must contain at least 6 characters."
+    You can identify this inconsistency before the application is even built. This is called static testing.
+
+    Static testing techniques:
+    Review: People examine a document/code to find issues.
+    Walkthrough: The author walks others through the document/code.
+    Inspection: A formal, structured review designed to identify defects.
+    Stati analysis: Tools analyze source code without executing it.
+
+    Dynamic Testing:
+    Dynamic testing involves executing the software and observing its behavior.
+    Its like running the application.
+    Example: Open login page --> enter email --> enter password --> click login --> observer Result
+
+
+Test Design techniques
+A) Equivalence Partitioning
+    suppose age must be between 18 and 60.
+    A beginer might test 18,19,20,21,....60; that's unnecessary.
+    Instead divide the possible inputs into groups/classes where the system should behave similarly.
+
+    Valid Partition: 18-60
+    Invalid Partition: <18 and >60
+
+    instead of testing many values, we could select representatives like below valid range, valid range and above valid range.
+    
+    we assume values of same partition will behave similarly.
+
+B) Boundaray value analysis
+    it specifically focuses on the edges.
+    exmaple: age = 18-60
+    The important values are 17, 18, 19, 59, 60 ,61
+    this is usefull as programmers ususlly amkes mistakes around boundaries.
+    if age>18: instead of if age>=18:
+    
+C) Decision Table testing
+D) state transition testing
+E) Use case Testing
+F) Error Guessing
+G) Exploratory testing
