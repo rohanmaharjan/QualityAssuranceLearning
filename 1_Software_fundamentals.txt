@@ -342,3 +342,68 @@ G) Exploratory testing
     Example: 
     open website --> try normal login --> notice unusual error --> investigate error --> try different input --> discover another behaviour --> investigate further
     Exploratory testing is an approach where learning about the application, designing tests, and executing tests happen simultaneously rather than strictly following predefined test cases.
+
+Ad-hoc Testing
+    Ad-hoc testing is informal testing performed without predefined test cases or a structured test plan.
+    The tester uses experience, intuition, and experimentation to find defects.
+    Example: similar to error guessing
+
+Aplha Testing (internal)
+    Alpha testing is performed before the software is released to external users, usually in a controlled environment.
+    Typically it involves:
+    Internal QA
+    Developers
+    Internal stakeholders/users
+
+    Example: Development --> Alpha testing --> beta testing --> production release
+    TO identify major defects before the software reaches external users.
+
+Beta Testing (exteranl)
+    Beta testing is performed by a limited group of external or real users before the final release.
+    For example, a company might release a beta version of an application to 1,000 selected users.
+    Those users use it in real-world environments and provide feedback.
+
+Compatibility Testing
+    Compatibility testing verifies whether an application works correctly across different environments.
+    browser, OS, devices
+
+Usability testing
+    it focuses on "How easy and comfortable is the application for users to use?"
+
+    A featture can be functionally correct but may have poor usability.
+    Example: Login Works but Login button is difficult to find, error messages are confusing, p/w requirements aren't clear, navigation is difficult
+
+    it is always necessary to consider the ease of use, navigtion, learnibility, clarity, accessibility and user satisfaction
+
+Reliability testing
+    Reliability testing checks whether the system can perform its intended functions consistently over time without failure.
+    Imagine an API that works perfectly once.
+    That doesn't necessarily mean it's reliable.
+    Example: Api may work for 100 or 200 requests but it may not work for 1000 requests or afte few hours of running.
+    A banking application should not randomly creash after running continuously for several hours.
+
+Recovery testing
+    It checks how the system behaves after a failure.
+    Possible failures: server crash, database failure, network failure, application crash, power failure
+    example: how does a system behaves after its system is executed after system failure.
+
+Installation testing
+    It verifies that software can be installed, configured, upgraded, and uninstalled safely and correctly.
+
+Internationalization
+    Internationalization means designing the software so that it can support different languages, regions, currencies, date formats, and other regional requirements.
+    Th main idea is to prepare a software to support multiple locales.
+    Example: an application can be designed to suppport nepali, english, french, german etc 
+
+Localization
+    Localization means adapting the software for a specific language or region.
+    Example for nepal, language = nepali, currency = NPR, date formats 
+
+Severity vs Priority
+    Severity referes to "How seriously does the defect affect the system?"
+    Example: Payment completely crahes.
+    High Severity
+
+    Priority refers to "How urgently should the defect be fixed?"
+    Example: Company logo is wrong on the homepage one hour before a major launch.
+    low severity but very high priority.
