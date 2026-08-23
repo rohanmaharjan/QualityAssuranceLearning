@@ -281,7 +281,64 @@ B) Boundaray value analysis
     if age>18: instead of if age>=18:
     
 C) Decision Table testing
+    Now imagine a login system with these rules:   
+    Email must be registered.
+    Password must be correct.
+    Account must be active.
+
+    A user's login result depends on multiple conditions simultaneously.
+    This is where Decision Table Testing becomes useful.
+
+    We create conditions:
+    Condition	C1
+    Registered email?	Yes/No
+    Correct password?	Yes/No
+    Account active?	Yes/No
+
+    Then determine the expected result.
+    It becomes especially useful when there are many combinations of conditions.
+
+    They are used when requirements contain AND, OR, multiple conditions, discounts, permissions, authentication rules
+
 D) state transition testing
+    Some systems don't simply have:
+    Input → Output
+    Instead, the system can exist in different states, and an action causes it to move from one state to another.
+    That's called State Transition Testing.
+
+    Example: Banking system
+    Active --> Withdraw --> Active
+
+    But suppose the user enters the wrong PIN three times:
+    Active --> Wrong PIN --> Wrong PIN --> Wrong PIN --> Locked
+
+    Entering fourth PIN shouldn't behave as the first incorrect PIN.
+
+    Wrong --> Wrong --> Right --> Wrong --> Wrong
+    If the requirement says "3 consecutive failed attempts", it should not lock the account after the third wrong attempt overall, because the successful login reset the consecutive-failure count.
+
 E) Use case Testing
+    A use case describes how a user interacts with a system to accomplish a goal.
+    For example:
+    Use case: User logs into the application.
+    Basic Flow: Open login page --> Enters mail --> nter password --> clicks login --> system validiates credentials --> dashboard
+    this is the peimary flow but it is also important to consider alternative flow (incorect credentials) and exceptional flow (database not available).
+
 F) Error Guessing
+    Error Guessing means using your experience and intuition to predict where defects are likely to occur.
+    There isn't necessarily a formal formula.
+
+    You ask:
+    "Where would a developer probably make a mistake?"
+
+    For a login form you might test, empty feilds, spaces, very long input, special passwords, wrong password, case sensitivity, copy/paste, rapid repeated clicks, browser back button, refresh after login, session
+    These are common places where software can behave unexpectedly.
+
 G) Exploratory testing
+    Instead of following only predefined test cases, you:
+    Learn about the application, design tests, and execute them simultaneously.
+    You explore the application and follow interesting behavior.
+
+    Example: 
+    open website --> try normal login --> notice unusual error --> investigate error --> try different input --> discover another behaviour --> investigate further
+    Exploratory testing is an approach where learning about the application, designing tests, and executing tests happen simultaneously rather than strictly following predefined test cases.
