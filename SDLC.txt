@@ -1,0 +1,94 @@
+SDLC
+Software Development Life Cycle
+It is a structured process used by software teams to plan, design, develop, test, deploy, and maintain software.
+
+SDLC flow
+Requirement analysis --> Planning --> Design --> Development --> Testing --> Deployment --> maintainence
+
+SDLC Phases
+A) Requirement analysis
+    Determines what a software must do.
+    Example: login feature
+    - user can login with email and pw.
+    - pw must be at least 8 char
+    - invalid credential show wrror
+    - user should be locked after 5 failed attempts 
+    - forgot pw should be available
+
+    Developers Role: They study the requirements and determine what needs to be built.
+
+    QA Role: reviews, wat happens if the user enters anincorrect pw?, if email is empty, after 5 failed attmpts?
+
+B) Planning
+    The team decides how the project will be executed.
+    determines: Project scope, Resources, Timeline, Team members,Technologies,Risks,Estimated cost,Testing strategy
+   
+    QA may determine:
+    What needs to be tested?
+    How much testing is required?
+    Who will test?
+    What testing tools will be used?
+    What environments are needed?
+    What are the testing risks?
+
+C) Design
+    The team decides how the software will work internally and externally.
+    This includes UI design, Database design, system architecture, api design, data flow, component design
+    Example: Login system
+    User --> Login UI --> login API --> authentication servic --> Database
+
+    QA perspective:
+    What components need testing?
+    How will data flow?
+    What APIs are involved?
+    What could fail?
+    What integration points exist?
+
+D) Development
+    Now developers actually write the code.
+    Frontend --> login form --> backend api --> auathentication logic --> Database
+
+    QA Perspective:
+    Test scenarios
+    Test cases
+    Test data
+    Automation scripts
+    API tests
+
+E) Testing
+    Now the software is tested against the requirements.
+
+    QA performs activities such as:
+    Functional testing
+    Regression testing
+    Integration testing
+    UI testing
+    API testing
+    Database testing
+    Compatibility testing
+    Automation testing
+
+    QA → reports defect → Developer fixes → QA retests
+
+F) Deployment
+    Once the software meets the required quality standards, it is released to an environment.
+
+    QA perspective:
+    Smoke testing
+    Sanity testing
+    Production verification
+    Post-deployment checks
+
+G) Maintainance 
+    The software is now being used by real users.
+    But the work doesn't end.
+
+    There may be:
+    Bugs
+    New requirements
+    Performance problems
+    Security issues
+    Feature enhancements
+    Compatibility issues
+
+    QA continues testing new changes and making sure existing functionality isn't broken.
