@@ -92,3 +92,292 @@ G) Maintainance
     Compatibility issues
 
     QA continues testing new changes and making sure existing functionality isn't broken.
+
+
+SDLC Models
+A) Waterfall Models
+    oldest and simplest SDLC model.
+
+    complete one phase --> move to the next phase --> dont normally go backward
+
+    Phases
+    requirement analysis --> design --> development --> testing --> deployment -->maintenance
+
+    In this model QA happens only after development
+
+    Disabvantages
+    difficult to accomodate changing requirements
+    testing happens late
+    customer feedback comes late
+    high risks when requirements arent clear
+
+B) V-Models
+    V-Model = verification and validation model
+    improved/extended version of the Waterfall model
+    each development phase has a corresponding testing phase
+    testing is planned early, alongside development activities
+
+    Phases
+
+                requirement analysis
+                    ↓
+                system design
+                    ↓
+                architecture design
+                    ↓
+                module design
+                    ↓
+                    coding
+                    ↓
+                unit testing
+                    ↓
+            integration testing
+                    ↓
+                system testing
+                    ↓
+            acceptance testing
+
+    Development side:
+    requirement analysis --> system design --> architecture --> module design --> coding
+
+    Testing side:
+    acceptance testing --> system testing --> integration testing --> unit testing
+
+    Example:
+    For an online banking application:
+
+    requirement analysis --> acceptance testing
+    system design         --> system testing
+    architecture design   --> integration testing
+    module design         --> unit testing
+    coding
+
+    QA starts planning testing early instead of waiting until development is finished.
+
+    Advantages
+    testing is planned early
+    defects can be identified earlier
+    clear relationship between development and testing
+    suitable when requirements are stable and well-defined
+    easy to manage and track
+
+    Disadvantages
+    difficult to accommodate changing requirements
+    requires clear requirements from the beginning
+    working software is available late
+    changes can become expensive
+
+C) Iterative Model
+    Develop the software through repeated cycles
+
+    software is developed in multiple iterations
+    each iteration produces an improved version of the software
+    feedback from one iteration is used in the next iteration
+
+    Basic flow
+
+    Planning
+    ↓
+    Design
+    ↓
+    Development
+    ↓
+    Testing
+    ↓
+    Feedback
+    ↓
+    Next iteration
+    ↓
+    Improved version
+
+    Example:
+
+    E-commerce application
+
+    Iteration 1:
+    login + registration
+            ↓
+    testing + feedback
+
+    Iteration 2:
+    product search + product details
+            ↓
+    testing + feedback
+
+    Iteration 3:
+    shopping cart + checkout
+            ↓
+    testing + feedback
+
+    Iteration 4:
+    payment + order tracking
+            ↓
+    testing + feedback
+
+    QA tests each iteration instead of waiting for the entire application.
+
+    Advantages
+    early working software
+    early testing and feedback
+    easier to handle changing requirements
+    problems can be identified earlier
+    lower risk compared to a purely sequential approach
+
+    Disadvantages
+    requires good planning
+    repeated testing can increase effort
+    architecture may need changes as the system evolves
+    project can become difficult to manage if iterations are poorly planned
+
+D) Spiral Model
+    Iterative development + risk analysis
+
+    software is developed through repeated cycles called spirals
+    each cycle focuses heavily on identifying and reducing risks
+    suitable for large, complex and high-risk projects
+
+    Main phases of each spiral
+
+    Planning
+    ↓
+    Risk Analysis
+    ↓
+    Development
+    ↓
+    Testing / Evaluation
+    ↓
+    Next Spiral
+
+    Example:
+
+    Suppose a company is developing an online banking system.
+
+    Spiral 1:
+    analyze requirements
+    identify security risks
+    create prototype
+    test prototype
+
+    Spiral 2:
+    develop authentication
+    analyze security risks
+    test authentication
+
+    Spiral 3:
+    develop money transfer
+    analyze transaction risks
+    test money transfer
+
+    Spiral 4:
+    integrate complete system
+    analyze remaining risks
+    perform complete testing
+
+    QA perspective
+
+    QA participates in risk identification and testing
+    throughout the different spirals.
+
+    Advantages
+    strong focus on risk management
+    suitable for large and complex projects
+    changing requirements can be accommodated
+    customer feedback can be incorporated
+    problems can be identified earlier
+
+    Disadvantages
+    expensive
+    complex to manage
+    requires experienced team members
+    risk analysis requires significant time
+    not suitable for small/simple projects
+
+E) Agile Model 
+    Iterative + incremental development with continuous Feedback
+
+    software is developed and delivered in small increments
+    requirements can change during development
+    customer feedback is continuously incorporated
+    testing happens continuously throughout development
+
+    Basic flow
+
+    Requirement
+        ↓
+    Planning
+        ↓
+    Development
+        ↓
+    Testing
+        ↓
+    Review
+        ↓
+    Release
+        ↓
+    Feedback
+        ↓
+    Next iteration
+
+    Example:
+
+    Suppose we are developing a food delivery application.
+
+    Sprint 1:
+    user registration + login
+            ↓
+    development + testing
+            ↓
+    release
+
+    Sprint 2:
+    restaurant listing + search
+            ↓
+    development + testing
+            ↓
+    release
+
+    Sprint 3:
+    food ordering + cart
+            ↓
+    development + testing
+            ↓
+    release
+
+    Sprint 4:
+    payment + order tracking
+            ↓
+    development + testing
+            ↓
+    release
+
+    QA perspective
+
+    QA works continuously with developers and the team.
+    QA does not wait until the entire application is developed.
+
+    QA activities include:
+
+    requirement review
+    test scenario creation
+    test case creation
+    functional testing
+    API testing
+    regression testing
+    automation testing
+    bug reporting
+    continuous testing
+
+    Advantages
+    handles changing requirements well
+    continuous testing
+    frequent customer feedback
+    early delivery of working software
+    defects can be found early
+    close collaboration between team members
+
+    Disadvantages
+    requires strong communication
+    requirements may change frequently
+    difficult to predict exact scope and timeline
+    requires active customer/team involvement
+    regression testing can become large as the product grows
