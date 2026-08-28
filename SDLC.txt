@@ -1,383 +1,325 @@
-SDLC
-Software Development Life Cycle
-It is a structured process used by software teams to plan, design, develop, test, deploy, and maintain software.
-
-SDLC flow
-Requirement analysis --> Planning --> Design --> Development --> Testing --> Deployment --> maintainence
-
-SDLC Phases
-A) Requirement analysis
-    Determines what a software must do.
-    Example: login feature
-    - user can login with email and pw.
-    - pw must be at least 8 char
-    - invalid credential show wrror
-    - user should be locked after 5 failed attempts 
-    - forgot pw should be available
-
-    Developers Role: They study the requirements and determine what needs to be built.
-
-    QA Role: reviews, wat happens if the user enters anincorrect pw?, if email is empty, after 5 failed attmpts?
-
-B) Planning
-    The team decides how the project will be executed.
-    determines: Project scope, Resources, Timeline, Team members,Technologies,Risks,Estimated cost,Testing strategy
-   
-    QA may determine:
-    What needs to be tested?
-    How much testing is required?
-    Who will test?
-    What testing tools will be used?
-    What environments are needed?
-    What are the testing risks?
-
-C) Design
-    The team decides how the software will work internally and externally.
-    This includes UI design, Database design, system architecture, api design, data flow, component design
-    Example: Login system
-    User --> Login UI --> login API --> authentication servic --> Database
-
-    QA perspective:
-    What components need testing?
-    How will data flow?
-    What APIs are involved?
-    What could fail?
-    What integration points exist?
-
-D) Development
-    Now developers actually write the code.
-    Frontend --> login form --> backend api --> auathentication logic --> Database
-
-    QA Perspective:
-    Test scenarios
-    Test cases
-    Test data
-    Automation scripts
-    API tests
-
-E) Testing
-    Now the software is tested against the requirements.
-
-    QA performs activities such as:
-    Functional testing
-    Regression testing
-    Integration testing
-    UI testing
-    API testing
-    Database testing
-    Compatibility testing
-    Automation testing
-
-    QA → reports defect → Developer fixes → QA retests
-
-F) Deployment
-    Once the software meets the required quality standards, it is released to an environment.
-
-    QA perspective:
-    Smoke testing
-    Sanity testing
-    Production verification
-    Post-deployment checks
-
-G) Maintainance 
-    The software is now being used by real users.
-    But the work doesn't end.
-
-    There may be:
-    Bugs
-    New requirements
-    Performance problems
-    Security issues
-    Feature enhancements
-    Compatibility issues
-
-    QA continues testing new changes and making sure existing functionality isn't broken.
-
-
-SDLC Models
-A) Waterfall Models
-    oldest and simplest SDLC model.
-
-    complete one phase --> move to the next phase --> dont normally go backward
-
-    Phases
-    requirement analysis --> design --> development --> testing --> deployment -->maintenance
-
-    In this model QA happens only after development
-
-    Disabvantages
-    difficult to accomodate changing requirements
-    testing happens late
-    customer feedback comes late
-    high risks when requirements arent clear
-
-B) V-Models
-    V-Model = verification and validation model
-    improved/extended version of the Waterfall model
-    each development phase has a corresponding testing phase
-    testing is planned early, alongside development activities
-
-    Phases
-
-                requirement analysis
-                    ↓
-                system design
-                    ↓
-                architecture design
-                    ↓
-                module design
-                    ↓
-                    coding
-                    ↓
-                unit testing
-                    ↓
-            integration testing
-                    ↓
-                system testing
-                    ↓
-            acceptance testing
-
-    Development side:
-    requirement analysis --> system design --> architecture --> module design --> coding
-
-    Testing side:
-    acceptance testing --> system testing --> integration testing --> unit testing
-
-    Example:
-    For an online banking application:
-
-    requirement analysis --> acceptance testing
-    system design         --> system testing
-    architecture design   --> integration testing
-    module design         --> unit testing
-    coding
-
-    QA starts planning testing early instead of waiting until development is finished.
-
-    Advantages
-    testing is planned early
-    defects can be identified earlier
-    clear relationship between development and testing
-    suitable when requirements are stable and well-defined
-    easy to manage and track
-
-    Disadvantages
-    difficult to accommodate changing requirements
-    requires clear requirements from the beginning
-    working software is available late
-    changes can become expensive
-
-C) Iterative Model
-    Develop the software through repeated cycles
-
-    software is developed in multiple iterations
-    each iteration produces an improved version of the software
-    feedback from one iteration is used in the next iteration
-
-    Basic flow
-
-    Planning
-    ↓
-    Design
-    ↓
-    Development
-    ↓
-    Testing
-    ↓
-    Feedback
-    ↓
-    Next iteration
-    ↓
-    Improved version
-
-    Example:
-
-    E-commerce application
-
-    Iteration 1:
-    login + registration
-            ↓
-    testing + feedback
-
-    Iteration 2:
-    product search + product details
-            ↓
-    testing + feedback
-
-    Iteration 3:
-    shopping cart + checkout
-            ↓
-    testing + feedback
-
-    Iteration 4:
-    payment + order tracking
-            ↓
-    testing + feedback
-
-    QA tests each iteration instead of waiting for the entire application.
-
-    Advantages
-    early working software
-    early testing and feedback
-    easier to handle changing requirements
-    problems can be identified earlier
-    lower risk compared to a purely sequential approach
-
-    Disadvantages
-    requires good planning
-    repeated testing can increase effort
-    architecture may need changes as the system evolves
-    project can become difficult to manage if iterations are poorly planned
-
-D) Spiral Model
-    Iterative development + risk analysis
-
-    software is developed through repeated cycles called spirals
-    each cycle focuses heavily on identifying and reducing risks
-    suitable for large, complex and high-risk projects
-
-    Main phases of each spiral
-
-    Planning
-    ↓
-    Risk Analysis
-    ↓
-    Development
-    ↓
-    Testing / Evaluation
-    ↓
-    Next Spiral
-
-    Example:
-
-    Suppose a company is developing an online banking system.
-
-    Spiral 1:
-    analyze requirements
-    identify security risks
-    create prototype
-    test prototype
-
-    Spiral 2:
-    develop authentication
-    analyze security risks
-    test authentication
-
-    Spiral 3:
-    develop money transfer
-    analyze transaction risks
-    test money transfer
-
-    Spiral 4:
-    integrate complete system
-    analyze remaining risks
-    perform complete testing
-
-    QA perspective
-
-    QA participates in risk identification and testing
-    throughout the different spirals.
-
-    Advantages
-    strong focus on risk management
-    suitable for large and complex projects
-    changing requirements can be accommodated
-    customer feedback can be incorporated
-    problems can be identified earlier
-
-    Disadvantages
-    expensive
-    complex to manage
-    requires experienced team members
-    risk analysis requires significant time
-    not suitable for small/simple projects
-
-E) Agile Model 
-    Iterative + incremental development with continuous Feedback
-
-    software is developed and delivered in small increments
-    requirements can change during development
-    customer feedback is continuously incorporated
-    testing happens continuously throughout development
-
-    Basic flow
-
-    Requirement
-        ↓
-    Planning
-        ↓
-    Development
-        ↓
-    Testing
-        ↓
-    Review
-        ↓
-    Release
-        ↓
-    Feedback
-        ↓
-    Next iteration
-
-    Example:
-
-    Suppose we are developing a food delivery application.
-
-    Sprint 1:
-    user registration + login
-            ↓
-    development + testing
-            ↓
-    release
-
-    Sprint 2:
-    restaurant listing + search
-            ↓
-    development + testing
-            ↓
-    release
-
-    Sprint 3:
-    food ordering + cart
-            ↓
-    development + testing
-            ↓
-    release
-
-    Sprint 4:
-    payment + order tracking
-            ↓
-    development + testing
-            ↓
-    release
-
-    QA perspective
-
-    QA works continuously with developers and the team.
-    QA does not wait until the entire application is developed.
-
-    QA activities include:
-
-    requirement review
-    test scenario creation
-    test case creation
-    functional testing
-    API testing
-    regression testing
-    automation testing
-    bug reporting
-    continuous testing
-
-    Advantages
-    handles changing requirements well
-    continuous testing
-    frequent customer feedback
-    early delivery of working software
-    defects can be found early
-    close collaboration between team members
-
-    Disadvantages
-    requires strong communication
-    requirements may change frequently
-    difficult to predict exact scope and timeline
-    requires active customer/team involvement
-    regression testing can become large as the product grows
+# SDLC (Software Development Life Cycle)
+
+Software Development Life Cycle is a structured process used by software teams to plan, design, develop, test, deploy, and maintain software.
+
+## SDLC Flow
+Requirement analysis → Planning → Design → Development → Testing → Deployment → Maintenance
+
+
+---
+
+## SDLC Phases
+
+### A) Requirement Analysis
+
+Determines what a software must do.
+
+**Example:** Login feature
+- User can login with email and password.
+- Password must be at least 8 characters.
+- Invalid credentials show an error.
+- User should be locked after 5 failed attempts.
+- "Forgot password" should be available.
+
+**Developer's Role:** They study the requirements and determine what needs to be built.
+
+**QA's Role:** Reviews and asks questions like — What happens if the user enters an incorrect password? What if email is empty? What happens after 5 failed attempts?
+
+---
+
+### B) Planning
+
+The team decides how the project will be executed.
+
+**Determines:**
+- Project scope
+- Resources
+- Timeline
+- Team members
+- Technologies
+- Risks
+- Estimated cost
+- Testing strategy
+
+**QA may determine:**
+- What needs to be tested?
+- How much testing is required?
+- Who will test?
+- What testing tools will be used?
+- What environments are needed?
+- What are the testing risks?
+
+---
+
+### C) Design
+
+The team decides how the software will work internally and externally.
+
+This includes: UI design, database design, system architecture, API design, data flow, component design.
+
+**Example:** Login system
+Frontend → Login form → Backend API → Authentication logic → Database
+
+
+**QA Perspective:**
+- Test scenarios
+- Test cases
+- Test data
+- Automation scripts
+- API tests
+
+---
+
+### E) Testing
+
+Now the software is tested against the requirements.
+
+**QA performs activities such as:**
+- Functional testing
+- Regression testing
+- Integration testing
+- UI testing
+- API testing
+- Database testing
+- Compatibility testing
+- Automation testing
+
+**Cycle:** QA → reports defect → Developer fixes → QA retests
+
+---
+
+### F) Deployment
+
+Once the software meets the required quality standards, it is released to an environment.
+
+**QA perspective:**
+- Smoke testing
+- Sanity testing
+- Production verification
+- Post-deployment checks
+
+---
+
+### G) Maintenance
+
+The software is now being used by real users. But the work doesn't end.
+
+**There may be:**
+- Bugs
+- New requirements
+- Performance problems
+- Security issues
+- Feature enhancements
+- Compatibility issues
+
+QA continues testing new changes and making sure existing functionality isn't broken.
+
+---
+
+## SDLC Models
+
+### A) Waterfall Model
+
+The oldest and simplest SDLC model.
+
+> Complete one phase → move to the next phase → don't normally go backward
+
+**Phases:**
+Requirement analysis → Design → Development → Testing → Deployment → Maintenance
+
+
+In this model, QA happens only after development.
+
+**Disadvantages:**
+- Difficult to accommodate changing requirements
+- Testing happens late
+- Customer feedback comes late
+- High risks when requirements aren't clear
+
+---
+
+### B) V-Model
+
+**V-Model = Verification and Validation Model**
+
+An improved/extended version of the Waterfall model. Each development phase has a corresponding testing phase — testing is planned early, alongside development activities.
+
+**Phases:**
+          Requirement analysis
+                 ↓
+            System design
+                 ↓
+          Architecture design
+                 ↓
+            Module design
+                 ↓
+               Coding
+                 ↓
+           Unit testing
+                 ↓
+        Integration testing
+                 ↓
+           System testing
+                 ↓
+         Acceptance testing
+
+
+**Development side:**
+`Requirement analysis → System design → Architecture → Module design → Coding`
+
+**Testing side:**
+`Acceptance testing → System testing → Integration testing → Unit testing`
+
+**Example:** For an online banking application:
+
+| Development Phase | Corresponding Testing Phase |
+|---|---|
+| Requirement analysis | Acceptance testing |
+| System design | System testing |
+| Architecture design | Integration testing |
+| Module design | Unit testing |
+| Coding | — |
+
+QA starts planning testing early instead of waiting until development is finished.
+
+**Advantages:**
+- Testing is planned early
+- Defects can be identified earlier
+- Clear relationship between development and testing
+- Suitable when requirements are stable and well-defined
+- Easy to manage and track
+
+**Disadvantages:**
+- Difficult to accommodate changing requirements
+- Requires clear requirements from the beginning
+- Working software is available late
+- Changes can become expensive
+
+---
+
+### C) Iterative Model
+
+Develop the software through repeated cycles.
+
+- Software is developed in multiple iterations.
+- Each iteration produces an improved version of the software.
+- Feedback from one iteration is used in the next iteration.
+
+**Basic flow:**
+Planning → Design → Development → Testing → Feedback → Next iteration → Improved version
+
+
+**Example:** E-commerce application
+
+| Iteration | Features | Activity |
+|---|---|---|
+| Iteration 1 | Login + registration | Testing + feedback |
+| Iteration 2 | Product search + product details | Testing + feedback |
+| Iteration 3 | Shopping cart + checkout | Testing + feedback |
+| Iteration 4 | Payment + order tracking | Testing + feedback |
+
+QA tests each iteration instead of waiting for the entire application.
+
+**Advantages:**
+- Early working software
+- Early testing and feedback
+- Easier to handle changing requirements
+- Problems can be identified earlier
+- Lower risk compared to a purely sequential approach
+
+**Disadvantages:**
+- Requires good planning
+- Repeated testing can increase effort
+- Architecture may need changes as the system evolves
+- Project can become difficult to manage if iterations are poorly planned
+
+---
+
+### D) Spiral Model
+
+**Iterative development + risk analysis**
+
+- Software is developed through repeated cycles called spirals.
+- Each cycle focuses heavily on identifying and reducing risks.
+- Suitable for large, complex, and high-risk projects.
+
+**Main phases of each spiral:**
+Planning → Risk Analysis → Development → Testing/Evaluation → Next Spiral
+
+
+**Example:** Suppose a company is developing an online banking system.
+
+| Spiral | Activities |
+|---|---|
+| Spiral 1 | Analyze requirements, identify security risks, create prototype, test prototype |
+| Spiral 2 | Develop authentication, analyze security risks, test authentication |
+| Spiral 3 | Develop money transfer, analyze transaction risks, test money transfer |
+| Spiral 4 | Integrate complete system, analyze remaining risks, perform complete testing |
+
+**QA perspective:** QA participates in risk identification and testing throughout the different spirals.
+
+**Advantages:**
+- Strong focus on risk management
+- Suitable for large and complex projects
+- Changing requirements can be accommodated
+- Customer feedback can be incorporated
+- Problems can be identified earlier
+
+**Disadvantages:**
+- Expensive
+- Complex to manage
+- Requires experienced team members
+- Risk analysis requires significant time
+- Not suitable for small/simple projects
+
+---
+
+### E) Agile Model
+
+**Iterative + incremental development with continuous feedback**
+
+- Software is developed and delivered in small increments.
+- Requirements can change during development.
+- Customer feedback is continuously incorporated.
+- Testing happens continuously throughout development.
+
+**Basic flow:**
+Requirement → Planning → Development → Testing → Review → Release → Feedback → Next iteration
+
+
+**Example:** Suppose we are developing a food delivery application.
+
+| Sprint | Features | Activities |
+|---|---|---|
+| Sprint 1 | User registration + login | Development + testing → release |
+| Sprint 2 | Restaurant listing + search | Development + testing → release |
+| Sprint 3 | Food ordering + cart | Development + testing → release |
+| Sprint 4 | Payment + order tracking | Development + testing → release |
+
+**QA perspective:** QA works continuously with developers and the team. QA does not wait until the entire application is developed.
+
+**QA activities include:**
+- Requirement review
+- Test scenario creation
+- Test case creation
+- Functional testing
+- API testing
+- Regression testing
+- Automation testing
+- Bug reporting
+- Continuous testing
+
+**Advantages:**
+- Handles changing requirements well
+- Continuous testing
+- Frequent customer feedback
+- Early delivery of working software
+- Defects can be found early
+- Close collaboration between team members
+
+**Disadvantages:**
+- Requires strong communication
+- Requirements may change frequently
+- Difficult to predict exact scope and timeline
+- Requires active customer/team involvement
+- Regression testing can become large as the product grows
