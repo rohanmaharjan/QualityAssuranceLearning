@@ -317,7 +317,7 @@ Requirement → Planning → Development → Testing → Review → Release → 
 - Defects can be found early
 - Close collaboration between team members
 
-**Disadvantages:**
+**Disadvantages :**
 - Requires strong communication
 - Requirements may change frequently
 - Difficult to predict exact scope and timeline
